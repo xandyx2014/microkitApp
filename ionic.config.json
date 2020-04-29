@@ -1,0 +1,7 @@
+{
+  "name": "microkids",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
