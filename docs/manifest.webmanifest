@@ -1,6 +1,6 @@
 {
-  "name": "app",
-  "short_name": "app",
+  "name": "Microkit",
+  "short_name": "Micro",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "minimal-ui",
