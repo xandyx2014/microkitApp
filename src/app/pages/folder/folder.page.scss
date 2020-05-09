@@ -1,0 +1,20 @@
+ion-col {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+img {
+  height: 140px;
+  width: 100%;
+}
+.bounceIn {
+	animation: bounceInKey 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) infinite alternate-reverse forwards;
+}
+@keyframes bounceInKey {
+    0% {
+      transform: translateZ(0);
+    }
+    100% {
+      transform: translateZ(-400px);
+    }
+  }
+  

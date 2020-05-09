@@ -1,0 +1,39 @@
+
+<ion-content>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="ion-no-padding">
+    <ion-item>
+      <ion-label position="">Nota</ion-label>
+      <ion-input formControlName="nota" type="text"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="myForm.get('nota').invalid && myForm.get('nota').touched" lines="none">
+      <ion-text color="danger" class="form-error">
+        Tiene q ingresar una nota
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha Inicial</ion-label>
+      <ion-datetime  formControlName="fechaInicial" display-format="DD.MM.YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="myForm.get('fechaInicial').invalid && myForm.get('fechaInicial').touched" lines="none">
+      <ion-text color="danger" class="form-error">
+        Ingrese la fecha
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha final</ion-label>
+      <ion-datetime  formControlName="fechaFinal" display-format="DD.MM.YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="myForm.get('fechaFinal').invalid && myForm.get('fechaFinal').touched" lines="none">
+      <ion-text color="danger" class="form-error">
+        Ingrese la fecha
+      </ion-text>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descripcion <ion-text color="danger">*</ion-text></ion-label>
+      <ion-textarea formControlName="descripcion" maxlength="100"></ion-textarea>
+    </ion-item>
+    <ion-button class="ion-padding" expand="full" color="primary" type="submit" [disabled]="myForm.invalid">
+      Crear
+    </ion-button>
+  </form>
+</ion-content>

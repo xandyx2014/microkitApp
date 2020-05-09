@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="primary">Micronutrientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-align-items-center">
+  <ion-slides mode="ios" pager="ios" scrollbar="ios">
+    <ion-slide>
+      <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/nutribebe">
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <img src="assets/img/nutribebe.jpg" alt="" srcset="">
+        <ion-card-header>
+          <ion-card-subtitle color="primary">NutriBebe</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          6 meses a 23 meses
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card  mode="md" class="ion-activatable fadeIn" routerLink="/vitamina">
+
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <img src="assets/img/vitamina.jpg" alt="" srcset="">
+        <ion-card-header>
+          <ion-card-subtitle color="primary">Vitamina A</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          A Partir de los 6 meses <br> a 59 meses
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-col size="6">
+        <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/chispita">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="assets/img/chispitas.jpg" alt="" srcset="">
+          <ion-card-header>
+            <ion-card-subtitle color="primary">Chispitas Nutricionales</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            De 6 meses a menor de 2 años
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-slide>
+    <ion-slide>
+      <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/jarabe">
+        <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        <img src="assets/img/sulfato.webp" alt="" srcset="">
+        <ion-card-header>
+          <ion-card-subtitle color="primary">Jarabe sulfato ferroso</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          De 24 meses a 59 meses
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

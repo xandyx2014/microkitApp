@@ -1,0 +1,55 @@
+<ion-header >
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="primary">Recordatorios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="recordatorios.length; else elseTemplate">
+    <ion-card *ngFor="let recordatorio of recordatorios" (click)="presentActionSheet(recordatorio)">
+      <ion-card-header>
+        <ion-card-title mode="md">{{recordatorio.nota | titlecase}}</ion-card-title>
+        <ion-card-subtitle>Fecha inicial: {{recordatorio.fechaInicial | date:'dd-MM-yyyy hh:mm:ss'}}</ion-card-subtitle>
+        <ion-card-subtitle>Fecha final: {{recordatorio.fechaFinal | date:'dd-MM-yyyy hh:mm:ss'}}</ion-card-subtitle>
+        <ion-card-subtitle> 
+          <ng-container *ngIf="recordatorio.estado; else elseTemplate">
+            <ion-chip color="primary" mode="ios" outline="true">
+              <ion-label>Completo</ion-label>
+              <ion-icon name="checkmark-outline"></ion-icon>
+            </ion-chip>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <ion-chip color="danger" mode="ios" outline="true">
+              <ion-label>Incompleto</ion-label>
+              <ion-icon name="close-outline"></ion-icon>
+            </ion-chip>
+          </ng-template>
+          
+          
+      </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        {{recordatorio.descripcion}}
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+  <ng-template #elseTemplate>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>No hay recordatorios aun </ion-card-subtitle>
+        
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon style="font-size: 2em;" name="sad-outline"></ion-icon>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins, StatusBarStyle } from '@capacitor/core';
 
 @Component({
   selector: 'app-root',
@@ -13,51 +12,54 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Hogar',
+      url: '/folder',
+      icon: 'home'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Nutribebe',
+      url: '/nutribebe',
+      icon: 'aperture'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Vitamina A',
+      url: '/vitamina',
+      icon: 'barcode'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Chispitas Nutricionales',
+      url: '/chispita',
+      icon: 'shield-checkmark'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Jarabe sulfato ferroso',
+      url: '/jarabe',
+      icon: 'flask'
     },
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
+      title: 'Micronutrientes Edad',
+      url: '/tabla',
+      icon: 'calendar'
+    },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  async initializeApp() {
+    const { SplashScreen, StatusBar } = Plugins;
+    try {
+      await SplashScreen.hide();
+      await StatusBar.setStyle({ style: StatusBarStyle.Light });
+      if (this.platform.is('android')) {
+        StatusBar.setBackgroundColor({ color: '#CDCDCD' });
+      }
+    } catch (err) {
+      console.log('This is normal in a browser', err);
+    }
   }
 
   ngOnInit() {

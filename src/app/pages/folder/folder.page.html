@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="primary">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="light">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/nutribebe">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="assets/img/nutribebe.jpg" alt="" srcset="">
+          <ion-card-header>
+            <ion-card-subtitle color="primary">NutriBebe</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Informacion para Nutribebes
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card  mode="md" class="ion-activatable fadeIn" routerLink="/vitamina">
+
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="assets/img/vitamina.jpg" alt="" srcset="">
+          <ion-card-header>
+            <ion-card-subtitle color="primary">Vitamina A</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Informacion para Vitamina A
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/chispita">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="assets/img/chispitas.jpg" alt="" srcset="">
+          <ion-card-header>
+            <ion-card-subtitle color="primary">Chispitas Nutricionales</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Informacion para Chispitas
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/jarabe">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="assets/img/sulfato.webp" alt="" srcset="">
+          <ion-card-header>
+            <ion-card-subtitle color="primary">Jarabe sulfato ferroso</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Informacion para Jarabe...
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card mode="md"  class="ion-activatable fadeIn" routerLink="/tabla">
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+          <img src="assets/img/tabla.jpg" alt="" srcset="">
+          <ion-card-header>
+            <ion-card-subtitle color="primary">Micronutrientes</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Segun la edad
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/recordatorio">
+    <ion-fab-button >
+      <ion-icon class="bounceIn" name="time"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
